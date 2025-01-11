@@ -47,7 +47,7 @@ const Index = () => {
           {stats.map((stat, index) => {
             const Icon = stat.icon;
             return (
-              <Card key={index} className="p-6 glass-card">
+              <Card key={index} className="p-6 glass-card transition-all duration-300 hover:scale-105 hover:shadow-xl">
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-sm font-medium text-gray-600">
@@ -68,7 +68,7 @@ const Index = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <Card className="p-6 glass-card">
+          <Card className="p-6 glass-card transition-all duration-300 hover:scale-105 hover:shadow-xl">
             <h2 className="text-lg font-semibold mb-4">Próximos Eventos</h2>
             <div className="space-y-4">
               {[1, 2, 3].map((_, index) => (
@@ -88,7 +88,7 @@ const Index = () => {
             </div>
           </Card>
 
-          <Card className="p-6 glass-card">
+          <Card className="p-6 glass-card transition-all duration-300 hover:scale-105 hover:shadow-xl">
             <h2 className="text-lg font-semibold mb-4">Aniversariantes</h2>
             <div className="space-y-4">
               {[1, 2, 3].map((_, index) => (
