@@ -51,12 +51,12 @@ const Members = () => {
 
         <Card className="p-6 glass-card mb-8">
           <div className="flex gap-4">
-            <div className="flex-1">
+            <div className="flex-1 relative">
               <Input
                 placeholder="Buscar membros..."
-                className="w-full"
-                icon={<Search className="w-4 h-4 text-gray-500" />}
+                className="w-full pl-10"
               />
+              <Search className="w-4 h-4 text-gray-500 absolute left-3 top-3" />
             </div>
             <Button variant="outline">Filtros</Button>
           </div>
