@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Sidebar from "./components/layout/Sidebar";
 import Index from "./pages/Index";
+import Members from "./pages/Members";
 
 const queryClient = new QueryClient();
 
@@ -18,6 +19,7 @@ const App = () => (
           <Sidebar />
           <Routes>
             <Route path="/" element={<Index />} />
+            <Route path="/members" element={<Members />} />
           </Routes>
         </div>
       </BrowserRouter>
