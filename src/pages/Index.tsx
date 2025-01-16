@@ -8,24 +8,28 @@ const Index = () => {
       value: "256",
       icon: Users,
       trend: "+12% este mês",
+      bgColor: "bg-purple-50",
     },
     {
       title: "Eventos Ativos",
       value: "8",
       icon: Calendar,
       trend: "3 esta semana",
+      bgColor: "bg-blue-50",
     },
     {
       title: "Células Ativas",
       value: "24",
       icon: Activity,
       trend: "+2 este mês",
+      bgColor: "bg-green-50",
     },
     {
       title: "Crescimento",
       value: "15%",
       icon: TrendingUp,
       trend: "vs. mês anterior",
+      bgColor: "bg-orange-50",
     },
   ];
 
@@ -47,7 +51,7 @@ const Index = () => {
           {stats.map((stat, index) => {
             const Icon = stat.icon;
             return (
-              <Card key={index} className="p-6 glass-card transition-all duration-300 hover:scale-105 hover:shadow-xl">
+              <Card key={index} className={`p-6 glass-card transition-all duration-300 hover:scale-105 hover:shadow-xl ${stat.bgColor}`}>
                 <div className="flex items-center justify-between">
                   <div>
                     <p className="text-sm font-medium text-gray-600">
@@ -68,13 +72,13 @@ const Index = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <Card className="p-6 glass-card transition-all duration-300 hover:scale-105 hover:shadow-xl">
+          <Card className="p-6 glass-card transition-all duration-300 hover:scale-105 hover:shadow-xl bg-indigo-50">
             <h2 className="text-lg font-semibold mb-4">Próximos Eventos</h2>
             <div className="space-y-4">
               {[1, 2, 3].map((_, index) => (
                 <div
                   key={index}
-                  className="flex items-center justify-between p-4 bg-gray-50 rounded-lg"
+                  className="flex items-center justify-between p-4 bg-white/80 rounded-lg"
                 >
                   <div>
                     <p className="font-medium">Culto de Celebração</p>
@@ -88,13 +92,13 @@ const Index = () => {
             </div>
           </Card>
 
-          <Card className="p-6 glass-card transition-all duration-300 hover:scale-105 hover:shadow-xl">
+          <Card className="p-6 glass-card transition-all duration-300 hover:scale-105 hover:shadow-xl bg-rose-50">
             <h2 className="text-lg font-semibold mb-4">Aniversariantes</h2>
             <div className="space-y-4">
               {[1, 2, 3].map((_, index) => (
                 <div
                   key={index}
-                  className="flex items-center space-x-4 p-4 bg-gray-50 rounded-lg"
+                  className="flex items-center space-x-4 p-4 bg-white/80 rounded-lg"
                 >
                   <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
                     <Users className="w-5 h-5 text-primary" />
