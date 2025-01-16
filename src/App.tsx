@@ -6,25 +6,32 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Sidebar from "./components/layout/Sidebar";
 import Index from "./pages/Index";
 import Members from "./pages/Members";
+import { useIsMobile } from "./hooks/use-mobile";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <div className="min-h-screen bg-gray-50">
-          <Sidebar />
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/members" element={<Members />} />
-          </Routes>
-        </div>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+const App = () => {
+  const isMobile = useIsMobile();
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <div className="min-h-screen bg-gray-50 flex">
+            <Sidebar />
+            <div className={`flex-1 ${!isMobile ? 'ml-64' : 'ml-0'} transition-all duration-300`}>
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/members" element={<Members />} />
+              </Routes>
+            </div>
+          </div>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;
