@@ -8,28 +8,28 @@ const Index = () => {
       value: "256",
       icon: Users,
       trend: "+12% este mês",
-      bgColor: "bg-purple-50",
+      bgColor: "bg-purple-50 hover:bg-purple-100",
     },
     {
       title: "Eventos Ativos",
       value: "8",
       icon: Calendar,
       trend: "3 esta semana",
-      bgColor: "bg-blue-50",
+      bgColor: "bg-blue-50 hover:bg-blue-100",
     },
     {
       title: "Células Ativas",
       value: "24",
       icon: Activity,
       trend: "+2 este mês",
-      bgColor: "bg-green-50",
+      bgColor: "bg-green-50 hover:bg-green-100",
     },
     {
       title: "Crescimento",
       value: "15%",
       icon: TrendingUp,
       trend: "vs. mês anterior",
-      bgColor: "bg-orange-50",
+      bgColor: "bg-orange-50 hover:bg-orange-100",
     },
   ];
 
@@ -72,7 +72,7 @@ const Index = () => {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-          <Card className="p-6 glass-card transition-all duration-300 hover:scale-105 hover:shadow-xl bg-indigo-50">
+          <Card className="p-6 glass-card transition-all duration-300 hover:scale-105 hover:shadow-xl bg-indigo-50 hover:bg-indigo-100">
             <h2 className="text-lg font-semibold mb-4">Próximos Eventos</h2>
             <div className="space-y-4">
               {[1, 2, 3].map((_, index) => (
@@ -92,7 +92,7 @@ const Index = () => {
             </div>
           </Card>
 
-          <Card className="p-6 glass-card transition-all duration-300 hover:scale-105 hover:shadow-xl bg-rose-50">
+          <Card className="p-6 glass-card transition-all duration-300 hover:scale-105 hover:shadow-xl bg-rose-50 hover:bg-rose-100">
             <h2 className="text-lg font-semibold mb-4">Aniversariantes</h2>
             <div className="space-y-4">
               {[1, 2, 3].map((_, index) => (
