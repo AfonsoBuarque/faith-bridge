@@ -38,7 +38,7 @@ const Sidebar = () => {
           <div className="flex flex-col h-full">
             <div className="flex flex-col items-center justify-center mb-8 pt-4 space-y-2">
               <img 
-                src="https://i.postimg.cc/4N07HNpP/onlychurch-fundo-laranja.png" 
+                src="https://i.postimg.cc/Vks5Jbh2/onlychurch-sem-fundo.png" 
                 alt="OnlyChurch Logo" 
                 className="w-32 h-32 object-contain"
               />
@@ -87,7 +87,7 @@ const Sidebar = () => {
       <div className="flex flex-col h-full">
         <div className="flex flex-col items-center justify-center mb-8 pt-4 space-y-2">
           <img 
-            src="https://i.postimg.cc/4N07HNpP/onlychurch-fundo-laranja.png" 
+            src="https://i.postimg.cc/Vks5Jbh2/onlychurch-sem-fundo.png" 
             alt="OnlyChurch Logo" 
             className="w-32 h-32 object-contain"
           />
