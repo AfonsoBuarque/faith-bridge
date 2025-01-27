@@ -1,4 +1,4 @@
-import { Home, Users, Calendar, DollarSign, Users2, Menu, X } from "lucide-react";
+import { Home, Users, Calendar, DollarSign, Users2, Menu, X, Grid } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { useState } from "react";
 import { useIsMobile } from "@/hooks/use-mobile";
@@ -11,6 +11,7 @@ const Sidebar = () => {
   const menuItems = [
     { icon: Home, label: "Dashboard", path: "/" },
     { icon: Users, label: "Membros", path: "/members" },
+    { icon: Grid, label: "Departamentos", path: "/departments" },
     { icon: Calendar, label: "Eventos", path: "/events" },
     { icon: DollarSign, label: "Finanças", path: "/finances" },
     { icon: Users2, label: "Células", path: "/cells" },

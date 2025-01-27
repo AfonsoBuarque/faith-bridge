@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Sidebar from "./components/layout/Sidebar";
 import Index from "./pages/Index";
 import Members from "./pages/Members";
+import Departments from "./pages/Departments";
 import { useIsMobile } from "./hooks/use-mobile";
 
 const queryClient = new QueryClient();
@@ -25,6 +26,7 @@ const App = () => {
               <Routes>
                 <Route path="/" element={<Index />} />
                 <Route path="/members" element={<Members />} />
+                <Route path="/departments" element={<Departments />} />
               </Routes>
             </div>
           </div>
