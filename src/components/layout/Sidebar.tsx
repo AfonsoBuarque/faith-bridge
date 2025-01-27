@@ -36,8 +36,13 @@ const Sidebar = () => {
           isOpen ? 'translate-x-0' : '-translate-x-full'
         }`}>
           <div className="flex flex-col h-full">
-            <div className="flex items-center justify-center mb-8 pt-4">
-              <h1 className="text-2xl font-bold text-primary">BeChurch</h1>
+            <div className="flex flex-col items-center justify-center mb-8 pt-4 space-y-2">
+              <img 
+                src="https://i.postimg.cc/4N07HNpP/onlychurch-fundo-laranja.png" 
+                alt="OnlyChurch Logo" 
+                className="w-32 h-32 object-contain"
+              />
+              <h1 className="text-2xl font-bold text-primary">OnlyChurch</h1>
             </div>
             
             <nav className="flex-1">
@@ -68,7 +73,7 @@ const Sidebar = () => {
 
             <div className="mt-auto pb-4">
               <div className="px-4 py-3">
-                <p className="text-sm text-gray-500">© 2024 BeChurch</p>
+                <p className="text-sm text-gray-500">© 2024 OnlyChurch</p>
               </div>
             </div>
           </div>
@@ -80,8 +85,13 @@ const Sidebar = () => {
   return (
     <div className="h-screen w-64 bg-white border-r border-gray-200 p-4 fixed left-0 top-0 slide-in">
       <div className="flex flex-col h-full">
-        <div className="flex items-center justify-center mb-8 pt-4">
-          <h1 className="text-2xl font-bold text-primary">BeChurch</h1>
+        <div className="flex flex-col items-center justify-center mb-8 pt-4 space-y-2">
+          <img 
+            src="https://i.postimg.cc/4N07HNpP/onlychurch-fundo-laranja.png" 
+            alt="OnlyChurch Logo" 
+            className="w-32 h-32 object-contain"
+          />
+          <h1 className="text-2xl font-bold text-primary">OnlyChurch</h1>
         </div>
         
         <nav className="flex-1">
@@ -111,7 +121,7 @@ const Sidebar = () => {
 
         <div className="mt-auto pb-4">
           <div className="px-4 py-3">
-            <p className="text-sm text-gray-500">© 2024 BeChurch</p>
+            <p className="text-sm text-gray-500">© 2024 OnlyChurch</p>
           </div>
         </div>
       </div>
