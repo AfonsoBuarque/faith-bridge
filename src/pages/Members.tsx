@@ -1,7 +1,7 @@
 import { Card } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { Search, UserPlus, Users, Mail, Phone, MapPin } from "lucide-react";
+import { Search, UserPlus } from "lucide-react";
 import {
   Table,
   TableBody,
@@ -49,7 +49,7 @@ const Members = () => {
   ];
 
   return (
-    <div className="p-8 ml-64 fade-in">
+    <div className="p-8 fade-in">
       <div className="max-w-7xl mx-auto">
         <header className="mb-8">
           <div className="flex items-center justify-between">
