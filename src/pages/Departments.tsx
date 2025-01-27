@@ -1,6 +1,7 @@
 import { Card } from "@/components/ui/card";
-import { Grid, Users, BookOpen, Music, Heart, Baby, School } from "lucide-react";
+import { Grid, Users, BookOpen, Music, Heart, Baby, School, Plus } from "lucide-react";
 import { useIsMobile } from "@/hooks/use-mobile";
+import { Button } from "@/components/ui/button";
 
 const Departments = () => {
   const isMobile = useIsMobile();
@@ -60,6 +61,12 @@ const Departments = () => {
               <p className="mt-1 text-sm md:text-base text-gray-500">
                 Gerencie os departamentos da sua igreja
               </p>
+            </div>
+            <div className="mt-4 md:mt-0">
+              <Button>
+                <Plus className="mr-2" />
+                Novo Departamento
+              </Button>
             </div>
           </div>
         </header>
