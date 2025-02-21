@@ -1,39 +1,177 @@
-import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Sidebar from "./components/layout/Sidebar";
-import Index from "./pages/Index";
-import Members from "./pages/Members";
-import Departments from "./pages/Departments";
-import { useIsMobile } from "./hooks/use-mobile";
+import React from 'react';
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { Header } from './components/Header';
+import { Features } from './components/Features';
+import { PartnerChurches } from './components/PartnerChurches';
+import { ChatDemo } from './components/ChatDemo';
+import { OtherProjects } from './components/OtherProjects';
+import { CTA } from './components/CTA';
+import { TypebotChat } from './components/TypebotChat';
+import { WaveBackground } from './components/WaveBackground';
+import { ToastContainer } from './components/ui/ToastContainer';
+import { ProfileCompletion } from './pages/ProfileCompletion';
+import { ProfileUpdate } from './pages/ProfileUpdate';
+import { Dashboard } from './pages/Dashboard';
+import { MemberForm } from './pages/MemberForm';
+import { MemberList } from './pages/MemberList';
+import { DetalhesDeMembros } from './pages/DetalhesDeMembros';
+import { Settings } from './pages/Settings';
+import { ListaDeVisitantes } from './pages/ListaDeVisitantes';
+import { ConsoleAdmin } from './pages/ConsoleAdmin';
+import { ConsoleAdminLogin } from './pages/ConsoleAdminLogin';
+import { ChildrenManagement } from './pages/ChildrenManagement';
+import { PequenosGrupos } from './pages/PequenosGrupos';
+import { Departments } from './pages/Departments';
+import { CalendarPage } from './pages/Calendar';
+import { useAuthContext } from './contexts/AuthContext';
 
-const queryClient = new QueryClient();
+function PrivateRoute({ children }: { children: React.ReactNode }) {
+  const { user, loading } = useAuthContext();
+  
+  if (loading) return null;
+  
+  return user ? <>{children}</> : <Navigate to="/" />;
+}
 
-const App = () => {
-  const isMobile = useIsMobile();
-
+function LandingPage() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <div className="min-h-screen bg-gray-50 flex">
-            <Sidebar />
-            <div className={`flex-1 ${!isMobile ? 'ml-64' : 'ml-0'} transition-all duration-300`}>
-              <Routes>
-                <Route path="/" element={<Index />} />
-                <Route path="/members" element={<Members />} />
-                <Route path="/departments" element={<Departments />} />
-              </Routes>
-            </div>
-          </div>
-        </BrowserRouter>
-      </TooltipProvider>
-    </QueryClientProvider>
+    <>
+      <Header />
+      <Features />
+      <PartnerChurches />
+      <ChatDemo />
+      <OtherProjects />
+      <CTA />
+      <TypebotChat />
+    </>
   );
-};
+}
 
-export default App;
+export default function App() {
+  return (
+    <BrowserRouter>
+      <div className="min-h-screen bg-[#D3D3D3] relative overflow-hidden">
+        <WaveBackground />
+        <div className="relative z-10">
+          <Routes>
+            <Route path="/" element={<LandingPage />} />
+            <Route path="/consoleadmin/login" element={<ConsoleAdminLogin />} />
+            <Route 
+              path="/consoleadmin" 
+              element={
+                <PrivateRoute>
+                  <ConsoleAdmin />
+                </PrivateRoute>
+              } 
+            />
+            <Route 
+              path="/dashboard" 
+              element={
+                <PrivateRoute>
+                  <Dashboard />
+                </PrivateRoute>
+              } 
+            />
+            <Route 
+              path="/profile/complete" 
+              element={
+                <PrivateRoute>
+                  <ProfileCompletion />
+                </PrivateRoute>
+              } 
+            />
+            <Route 
+              path="/profile/update" 
+              element={
+                <PrivateRoute>
+                  <ProfileUpdate />
+                </PrivateRoute>
+              } 
+            />
+            <Route
+              path="/members"
+              element={
+                <PrivateRoute>
+                  <MemberList />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/members/new"
+              element={
+                <PrivateRoute>
+                  <MemberForm />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/members/:id/edit"
+              element={
+                <PrivateRoute>
+                  <MemberForm />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/detalhes-membros"
+              element={
+                <PrivateRoute>
+                  <DetalhesDeMembros />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/settings"
+              element={
+                <PrivateRoute>
+                  <Settings />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/visitantes"
+              element={
+                <PrivateRoute>
+                  <ListaDeVisitantes />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/children-management"
+              element={
+                <PrivateRoute>
+                  <ChildrenManagement />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/pequenosgrupos"
+              element={
+                <PrivateRoute>
+                  <PequenosGrupos />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/departments"
+              element={
+                <PrivateRoute>
+                  <Departments />
+                </PrivateRoute>
+              }
+            />
+            <Route
+              path="/calendar"
+              element={
+                <PrivateRoute>
+                  <CalendarPage />
+                </PrivateRoute>
+              }
+            />
+          </Routes>
+        </div>
+        <ToastContainer />
+      </div>
+    </BrowserRouter>
+  );
+}

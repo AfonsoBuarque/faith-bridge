@@ -1,72 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
- 
-@layer base {
-  :root {
-    --background: 30 20% 98%;
-    --foreground: 30 10% 3.9%;
-    --card: 30 20% 98%;
-    --card-foreground: 30 10% 3.9%;
-    --popover: 30 20% 98%;
-    --popover-foreground: 30 10% 3.9%;
-    --primary: 24 95% 53%;
-    --primary-foreground: 30 100% 98%;
-    --secondary: 30 4.8% 95.9%;
-    --secondary-foreground: 30 5.9% 10%;
-    --muted: 30 4.8% 95.9%;
-    --muted-foreground: 30 3.8% 46.1%;
-    --accent: 30 4.8% 95.9%;
-    --accent-foreground: 30 5.9% 10%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 30 0% 98%;
-    --border: 30 5.9% 90%;
-    --input: 30 5.9% 90%;
-    --ring: 24 95% 53%;
-    --radius: 0.75rem;
-  }
- 
-  .dark {
-    --background: 30 10% 3.9%;
-    --foreground: 30 0% 98%;
-    --card: 30 10% 3.9%;
-    --card-foreground: 30 0% 98%;
-    --popover: 30 10% 3.9%;
-    --popover-foreground: 30 0% 98%;
-    --primary: 24 95% 53%;
-    --primary-foreground: 30 100% 98%;
-    --secondary: 30 3.7% 15.9%;
-    --secondary-foreground: 30 0% 98%;
-    --muted: 30 3.7% 15.9%;
-    --muted-foreground: 30 5% 64.9%;
-    --accent: 30 3.7% 15.9%;
-    --accent-foreground: 30 0% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 30 0% 98%;
-    --border: 30 3.7% 15.9%;
-    --input: 30 3.7% 15.9%;
-    --ring: 24 95% 53%;
-  }
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
 }
 
-@layer base {
-  * {
-    @apply border-border;
-  }
-  body {
-    @apply bg-background text-foreground;
-    font-feature-settings: "rlig" 1, "calt" 1;
-  }
-}
-
-.glass-card {
-  @apply bg-white/80 backdrop-blur-sm border border-white/20 shadow-lg;
-}
-
-.fade-in {
-  @apply animate-fadeIn;
-}
-
-.slide-in {
-  @apply animate-slideIn;
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
 }
